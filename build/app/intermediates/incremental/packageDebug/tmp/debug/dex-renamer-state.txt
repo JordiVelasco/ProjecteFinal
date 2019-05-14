@@ -1,4 +1,4 @@
-#Tue May 14 16:29:48 CEST 2019
+#Tue May 14 19:33:50 CEST 2019
 base.0=/home/jordi/AndroidStudioProjects/jordi_app/build/app/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex
