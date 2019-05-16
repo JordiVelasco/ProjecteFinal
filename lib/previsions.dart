@@ -1,36 +1,62 @@
 import 'package:flutter/material.dart';
+import 'Barceloneta.dart';
+import 'Sitges.dart';
+import 'Badalona.dart';
 
-class PrevisionsPage extends StatefulWidget {
+class PrevisionsPage extends StatelessWidget {
+  PrevisionsPage({Key key}) : super(key: key);
   @override
-  _PrevisionsPageState createState() => new _PrevisionsPageState();
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Surftter',
+      theme: ThemeData(
+        primaryColor: Colors.amber[900],
+      ),
+      initialRoute: '/',
+      routes: {
+        // When we navigate to the "/" route, build the FirstScreen Widget
+        '/': (context) => FirstScreen(),
+        // When we navigate to the "/second" route, build the SecondScreen Widget
+        '/second': (context) => BarcelonetaPage(),
+        '/third': (context) => SitgesPage(),
+        '/fourth': (context) => BadalonaPage(),
+      },
+    );
+  }
 }
-
-class _PrevisionsPageState extends State<PrevisionsPage> {
-  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  final List<String> _listViewData = [
-    "Barceloneta",
-  ];
+class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
       appBar: AppBar(
         title: Text('Previsions'),
       ),
-      body: ListView(
-        padding: EdgeInsets.all(10.0),
-        children: _listViewData.map((data) => ListTile(
-          leading: Icon(Icons.person),
-          title: Text(data),
-          onTap: () {
-            Navigator.of(context).pop();
-            Navigator.push(
-                context,
-                new MaterialPageRoute(
-                    builder: (BuildContext context) => new PrevisionsPage()));
-          },
-        )).toList(),
-      ),
+        body: ListView(
+          children: <Widget>[
+            new ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Barceloneta"),
+              onTap: () {
+                Navigator.pushNamed(context, '/second');
+              },
+            ),
+            new ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Sitges"),
+              onTap: () {
+                Navigator.pushNamed(context, '/third');
+              },
+            ),
+            new ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Badalona"),
+              onTap: () {
+                Navigator.pushNamed(context, '/fourth');
+              },
+            ),
+          ],
+        )
     );
   }
 }

@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 
-class BarcelonetaPage extends StatefulWidget {
-  @override
-  _BarcelonetaPageState createState() => new _BarcelonetaPageState();
-}
-
-class _BarcelonetaPageState extends State<BarcelonetaPage> {
+class BarcelonetaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Barceloneta'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Barceloneta"),
+      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {
+            // Navigate back to the first screen by popping the current route
+            // off the stack
+            Navigator.pop(context);
+          },
+          child: Text('Go back!'),
+        ),
       ),
     );
   }
