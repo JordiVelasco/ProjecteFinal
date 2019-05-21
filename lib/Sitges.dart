@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'FavoritesButton.dart';
 
 class SitgesPage extends StatelessWidget {
   @override
@@ -6,6 +7,9 @@ class SitgesPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Sitges"),
+        actions: <Widget>[
+          FavoritesButton()
+        ],
       ),
       body: Center(
         child: RaisedButton(

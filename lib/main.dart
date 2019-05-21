@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Surftter',
       theme: ThemeData(
-        primaryColor: Colors.amber[900],
+        primaryColor: Colors.blueAccent,
       ),
       home: new MyHomePage(),
     );
@@ -59,7 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
                     context,
                     new MaterialPageRoute(
-                        builder: (BuildContext context) => new PrevisionsPage()));
+                        builder: (BuildContext context) => new PrevisionsPage())
+                );
               },
             ),
             new ListTile(

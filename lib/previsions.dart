@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'Barceloneta.dart';
 import 'Sitges.dart';
 import 'Badalona.dart';
+import 'main.dart';
 
 class PrevisionsPage extends StatelessWidget {
   PrevisionsPage({Key key}) : super(key: key);
@@ -11,7 +12,7 @@ class PrevisionsPage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Surftter',
       theme: ThemeData(
-        primaryColor: Colors.amber[900],
+        primaryColor: Colors.blueAccent,
       ),
       initialRoute: '/',
       routes: {
